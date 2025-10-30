@@ -20,3 +20,15 @@ export function scoreRoll(roll) {
 
     return chance;
 }
+
+const lancers = [
+    [6, 6, 6, 6, 6], // YAMS = 50
+    [3, 3, 3, 5, 5], // Full = 30
+    [2, 2, 2, 2, 5], // Carré = 35
+    [1, 2, 3, 4, 5], // Grande suite = 40
+    [4, 4, 4, 1, 2], // Brelan = 28
+    [1, 2, 3, 4, 6]  // Chance = 16
+];
+
+const total = lancers.reduce((sum, lancer) => sum + scoreRoll(lancer), 0);
+console.log("Score total :", total);
