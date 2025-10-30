@@ -1,0 +1,22 @@
+{
+  "name": "cc1-yams",
+  "version": "1.0.0",
+  "description": "cc1 Clean code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bori-to/cc1-Yams.git"
+  },
+  "author": "Adrien PIMBEL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bori-to/cc1-Yams/issues"
+  },
+  "homepage": "https://github.com/bori-to/cc1-Yams#readme",
+  "dependencies": {
+    "vitest": "^3.2.4"
+  }
+}
