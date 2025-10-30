@@ -6,6 +6,10 @@ describe("Score de base", () => {
         expect(scoreRoll([6, 6, 6, 6, 6])).toBe(50);
     });
 
+    it("35 si 4 dés sont identiques", () => {
+        expect(scoreRoll([2, 2, 2, 2, 5])).toBe(35);
+    });
+
     it("0 sinon", () => {
         expect(scoreRoll([1, 2, 3, 4, 5])).toBe(0);
     });

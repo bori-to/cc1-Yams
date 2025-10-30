@@ -1,7 +1,9 @@
 export function scoreRoll(roll) {
-    const allEqual = roll.every(v => v === roll[0]);
-    if(allEqual) {
-        return 50;
-    }
+    const counts = {};
+    for (const v of roll) counts[v] = (counts[v] || 0) + 1;
+
+    if (Object.values(counts).includes(5)) return 50; // YAMS
+    if (Object.values(counts).includes(4)) return 35; // Carré
+
     return 0;
 }
