@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { scoreRoll } from "./yams.js";
+import { scoreRoll, calcScore } from "./yams.js";
 
 describe("Score du YAMS", () => {
 
@@ -45,4 +45,43 @@ describe("Score du YAMS", () => {
         expect(scoreRoll([4, 4, 4, 4, 1])).toBe(35);
         expect(scoreRoll([6, 6, 6, 2, 2])).toBe(30);
     });
+});
+
+describe("Somme des lancers", () => {
+  it("Total sur plusieurs lancers", () => {
+    const lancers = [
+      [6, 6, 6, 6, 6],
+      [3, 3, 3, 5, 5],
+      [2, 2, 2, 2, 5],
+      [1, 2, 3, 4, 5],
+      [4, 4, 4, 1, 2],
+      [1, 2, 3, 4, 6],
+    ];
+    expect(calcScore(lancers)).toBe(199);
+  });
+
+  it("0 si aucun lancer", () => {
+    expect(calcScore([])).toBe(0);
+  });
+
+  it("Un lancer", () => {
+    expect(calcScore([[2, 2, 2, 2, 2]])).toBe(50);
+  });
+
+  it("additionne correctement", () => {
+    const lancers = [
+      [5, 5, 5, 1, 2],
+      [2, 3, 4, 5, 6],
+      [1, 1, 2, 3, 6],
+    ];
+    expect(calcScore(lancers)).toBe(28 + 40 + 13);
+  });
+
+  it("Meilleure figure pour chaque lancer", () => {
+    const lancers = [
+      [4, 4, 4, 4, 4],
+      [3, 3, 3, 3, 1],
+    ];
+    expect(calcScore(lancers)).toBe(50 + 35);
+  });
 });
