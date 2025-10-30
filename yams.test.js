@@ -5,14 +5,17 @@ describe("Score du YAMS", () => {
 
     it("Brelan = 28 si 3 dés sont identiques", () => {
         expect(scoreRoll([4, 4, 4, 1, 2])).toBe(28);
+        expect(scoreRoll([1, 5, 2, 5, 5])).toBe(28);
     });
 
     it("Carré = 35 si 4 dés sont identiques", () => {
         expect(scoreRoll([2, 2, 2, 2, 5])).toBe(35);
+        expect(scoreRoll([5, 5, 5, 5, 2])).toBe(35);
     });
 
     it("Full = 30 si 3 dés sont identiques et 2 autres aussi", () => {
         expect(scoreRoll([3, 3, 3, 5, 5])).toBe(30);
+        expect(scoreRoll([2, 2, 2, 5, 5])).toBe(30);
     });
 
     it("Grande suite = 40 si les 5 dés sont consécutifs", () => {
