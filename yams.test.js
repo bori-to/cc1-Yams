@@ -15,11 +15,16 @@ describe("Score du YAMS", () => {
         expect(scoreRoll([3, 3, 3, 5, 5])).toBe(30);
     });
 
+    it("Grande suite = 40 si les 5 dés sont consécutifs", () => {
+        expect(scoreRoll([1, 2, 3, 4, 5])).toBe(40);
+        expect(scoreRoll([2, 3, 4, 5, 6])).toBe(40);
+    });
+
     it("YAMS = 50 si les 5 dés sont identiques", () => {
         expect(scoreRoll([6, 6, 6, 6, 6])).toBe(50);
     });    
 
     it("0 sinon", () => {
-        expect(scoreRoll([1, 2, 3, 4, 5])).toBe(0);
+        expect(scoreRoll([1, 2, 3, 4, 4])).toBe(0);
     });
 });
