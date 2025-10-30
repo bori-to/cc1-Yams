@@ -24,7 +24,7 @@ describe("Score du YAMS", () => {
         expect(scoreRoll([6, 6, 6, 6, 6])).toBe(50);
     });    
 
-    it("0 sinon", () => {
-        expect(scoreRoll([1, 2, 3, 4, 4])).toBe(0);
+    it("Chance = somme des 5 dés", () => {
+        expect(scoreRoll([1, 2, 3, 4, 6])).toBe(16);
     });
 });

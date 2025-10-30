@@ -16,5 +16,7 @@ export function scoreRoll(roll) {
     if (isGrandeSuite) return 40; // Grande suite
     if (values.includes(3)) return 28; // Brelan
 
-    return 0;
+    const chance = roll.reduce((a, b) => a + b, 0);
+
+    return chance;
 }
